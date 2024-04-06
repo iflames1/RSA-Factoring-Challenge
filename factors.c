@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * factorize - function that prints the factors of a number
+ * @num: number
+ */
 void factorize(unsigned long long int num)
 {
 	unsigned long long int i, j;
@@ -14,9 +18,15 @@ void factorize(unsigned long long int num)
 		}
 	}
 
-	printf("%llu=%llu*%d\n", num, num, 1);
+	return;
 }
 
+/**
+ * main - Entry point.
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0 on success else 1 on failure.
+ */
 int main(int argc, char *argv[])
 {
 	unsigned long long int num;
