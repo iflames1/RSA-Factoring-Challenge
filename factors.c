@@ -1,25 +1,27 @@
 #include <stdio.h>
 
-void factorize(int num)
+void factorize(unsigned long long int num)
 {
-	int i, j;
+	unsigned long long int i, j;
 
 	for (i = 2; i <= num / 2; i++)
 	{
 		if (num % i == 0)
 		{
 			j = num / i;
-			printf("%d=%d*%d\n", num, j, i);
+			printf("%llu=%llu*%llu\n", num, j, i);
 			return;
 		}
 	}
 
-	printf("%d=%d*%d\n", num, num, 1);
+	printf("%llu=%llu*%d\n", num, num, 1);
 }
 
 int main(int argc, char *argv[])
 {
-	if (argc > 2)
+	unsigned long long int num;
+
+	if (argc < 2)
 	{
 		fprintf(stderr, "Usage: %s <file>\n", argv[0]);
 		return (1);
@@ -33,9 +35,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	int num;
-
-	while (fscanf(file, "%d", &num) == 1)
+	while (fscanf(file, "%llu", &num) == 1)
 	{
 		factorize(num);
 	}
