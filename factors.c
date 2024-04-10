@@ -17,6 +17,7 @@ void factorize(unsigned long long int num)
 			return;
 		}
 	}
+	printf("%llu=%llu*%d\n", num, num, 1);
 
 	return;
 }
